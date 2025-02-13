@@ -6,6 +6,8 @@ import mongoSanitize from "express-mongo-sanitize";
 
 
 import userRoute from "./src/resources/user/routes/user.routes.js";
+import adminRoute from "./src/resources/user/routes/admin.routes.js";
+import bookRoute from "./src/resources/user/routes/book.routes.js";
 const app = express();
 
 app.use(morgan("dev"));
@@ -38,6 +40,8 @@ const limiter = rateLimit({
 app.use("/api/v1/*", limiter);
 
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/admin", adminRoute);
+app.use("/api/v1/book", bookRoute);
 
 
 export default app;

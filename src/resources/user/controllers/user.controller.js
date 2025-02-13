@@ -35,7 +35,7 @@ export const signup = async (req, res) => {
       user: newUser,
     });
   } catch (err) {
-    console.error(err);
+    console.log(err);
     return errorResMsg(res, 500, "Server Error");
   }
 };
